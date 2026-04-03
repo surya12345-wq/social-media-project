@@ -1,0 +1,254 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    color: #333;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+}
+
+.navbar h2 {
+    font-weight: 600;
+}
+
+.navbar a {
+    color: #ff6b6b;
+    margin-left: 15px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #fff;
+}
+
+/* MAIN */
+.main {
+    padding: 30px;
+}
+
+/* AUTH BOX (Login/Register) */
+.auth-box {
+    width: 320px;
+    margin: 80px auto;
+    padding: 25px;
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    text-align: center;
+    animation: fadeIn 0.6s ease;
+}
+
+.auth-box h2 {
+    margin-bottom: 15px;
+    color: white;
+}
+
+.auth-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+.auth-box button {
+    width: 100%;
+    padding: 12px;
+    background: #ff6b6b;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-box button:hover {
+    background: #ff4757;
+}
+
+.auth-box p {
+    margin-top: 10px;
+    color: white;
+}
+
+.auth-box a {
+    color: #ffd369;
+}
+
+/* UPLOAD FORM */
+.upload-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.upload-form input {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+.upload-form button {
+    padding: 10px 20px;
+    border: none;
+    background: #00c9a7;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.upload-form button:hover {
+    background: #00b894;
+}
+
+/* POSTS GRID */
+.posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+/* CARD */
+.card {
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.15);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    transition: 0.4s;
+    animation: fadeInUp 0.5s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+/* USERNAME */
+.card h4 {
+    padding: 10px;
+    color: white;
+}
+
+/* IMAGE */
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+/* CAPTION */
+.card p {
+    padding: 10px;
+    color: #fff;
+}
+
+/* ACTIONS */
+.actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+}
+
+.actions a {
+    text-decoration: none;
+    font-weight: 500;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+/* LIKE BUTTON */
+.actions a:first-child {
+    background: rgba(255, 107, 107, 0.8);
+}
+
+.actions a:first-child:hover {
+    background: #ff4757;
+    transform: scale(1.1);
+}
+
+/* SHARE BUTTON */
+.actions a:last-child {
+    background: rgba(0, 201, 167, 0.8);
+}
+
+.actions a:last-child:hover {
+    background: #00b894;
+    transform: scale(1.1);
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff6b6b;
+    border-radius: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .upload-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .auth-box {
+        width: 90%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

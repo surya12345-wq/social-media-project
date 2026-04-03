@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Dashboard</h1>
+
+<form action="/upload" method="POST" enctype="multipart/form-data" class="upload-form">
+    <input type="text" name="caption" placeholder="Write something..." required>
+    <input type="file" name="image" required>
+    <button type="submit">Post</button>
+</form>
+
+<div class="posts">
+    {% for post in posts %}
+    <div class="card">
+        <h4>@{{ post.user }}</h4>
+        <img src="{{ url_for('static', filename='uploads/' + post.image) }}">
+        <p>{{ post.caption }}</p>
+
+        <div class="actions">
+            <a href="/like/{{ post.id }}">❤️ {{ post.likes }}</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

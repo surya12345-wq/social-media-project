@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Social App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <h2>🌐 SocialApp</h2>
+
+    {% if session.get('user') %}
+        <div>
+            <span>Hi, {{ session['user'] }}</span>
+            <a href="/logout">Logout</a>
+        </div>
+    {% endif %}
+</nav>
+
+<div class="main">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>
